@@ -1,5 +1,4 @@
 <?php
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
@@ -21,7 +20,7 @@ use app\models\province;
     <?= $form->field($model, 'province_id')->textInput() ?>
 
 			<?php
-		//use app\models\Country;
+		//use app\models\province;
 			$province=province::find()->all();
 
 		//use yii\helpers\ArrayHelper;
