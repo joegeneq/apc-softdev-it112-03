@@ -2,8 +2,7 @@
 /* @var $this yii\web\View */
 $this->title = 'My Yii Application';
 ?>
-<html>
-<body>
+
 
 		<!--start-image-slider---->
 					<div class="image-slider">
@@ -111,5 +110,3 @@ $this->title = 'My Yii Application';
 		<!---End-content---->
 		<div class="clear"> </div>
 
-</body>
-</html>

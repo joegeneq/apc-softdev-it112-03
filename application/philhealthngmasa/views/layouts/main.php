@@ -31,23 +31,43 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 		<!---start-header---->
-			<div class="header">
+	
+        <?php
+			echo "<img src='images/headertext.png'>";
+             NavBar::begin([				 
+                'options' => [
+                    'class' => 'navbar-inverse navbar-fixed-top',
+                ],
+            ]);
+			echo "<img src='images/headertext.png'>";
+            echo Nav::widget([			
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                    Yii::$app->user->isGuest ?
+                        ['label' => 'Login', 'url' => ['/site/login']] :
+                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                            'url' => ['/site/logout'],
+                            'linkOptions' => ['data-method' => 'post']],
+                ],
+            ]);
+            NavBar::end();
+		?>
+
+		<div class="header">
 				<div class="wrap">
-				<div class="logo">
-					<a href="index.html"><img src="images/headertext.png" title="logo" /></a>
-				</div>
 				<div class="top-nav">
 					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="about.html">PHILHEALTH NG MASA</a></li>
-						<li><a href="services.html">SEARCH MEMBER</a></li>
-						<li><a href="plans.html">EVENTS</a></li>
-						<li><a href="contact.html">LOG IN</a></li>
+						<li class="active"><a href="index.html">HOME</a></li>
+						<li><a href="./index.php?r=site%2Fabout">ABOUT US</a></li>
+						<li><a href="./index.php?r=site%2Fcontact">PHILHEALTH NG MASA</a></li>
+						<li><a href="./index.php?r=site%2Fabout">SEARCH MEMBER</a></li>
+						<li><a href="./index.php?r=site%2Fcontact">EVENTS</a></li>
 					</ul>
 				</div>
 				<div class="clear"> </div>
 			</div>
 		</div>
+
 			<!---End-header---->
 
 

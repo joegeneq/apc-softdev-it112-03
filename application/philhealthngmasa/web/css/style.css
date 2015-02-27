@@ -1,6 +1,6 @@
 /* reset */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, navbar, section {display: block;}
 ol,ul{list-style:none;margin:0px;padding:0px;}
 blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
@@ -38,25 +38,30 @@ body{
 	background:#323A45;
 	border-bottom:2px solid #00B895;
 }
-.logo{
-	float: left;
-	padding:25px 0;
-}
+.nav{
+  	height: 85px;
+}	
+
 .top-nav{
-	float:right;
+	float:left;
+	padding: 20px 0px 0px 0px;
+
 }
 .top-nav ul li{
 	display:inline-block;
 	float:left;
+	height: 50px;
+	padding: 0px 0px 0px 80px;
 }
 .top-nav ul li a{
 	font-family: 'Roboto', sans-serif;
 	color: #d6d6d6;
-	padding: 40px 25px;
+	padding: 20px 30px 0px 30px;
 	display: block;
 	position: relative;
 	text-transform: uppercase;
 	transition: 0.5s ease;
+			height: 50px;
 	-o-transition: 0.5s ease;
 	-webkit-transition: 0.5s ease;
 	font-size: 0.875em;
