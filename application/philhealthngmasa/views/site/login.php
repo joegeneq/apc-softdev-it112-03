@@ -9,6 +9,24 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
+		<div class="header">
+				<div class="wrap">
+				<div class="top-nav">
+					<ul>
+						<li class="active"><a href="index.html">HOME</a></li>
+						<li><a href="./index.php?r=site%2Fabout">ABOUT US</a></li>
+						<li><a href="./index.php?r=site%2Fcontact">PHILHEALTH NG MASA</a></li>
+						<li><a href="./index.php?r=site%2Fabout">SEARCH MEMBER</a></li>
+						<li><a href="./index.php?r=site%2Fcontact">EVENTS</a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+
+
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
