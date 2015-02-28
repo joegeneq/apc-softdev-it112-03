@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\MyAddress;
+use app\models\Myaddress;
 
 /**
- * MyAddressSearch represents the model behind the search form about `app\models\MyAddress`.
+ * MyaddressSearch represents the model behind the search form about `app\models\Myaddress`.
  */
-class MyAddressSearch extends MyAddress
+class MyaddressSearch extends Myaddress
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class MyAddressSearch extends MyAddress
     {
         return [
             [['id'], 'integer'],
-            [['firstname', 'middlename', 'lastname', 'gender', 'created_at'], 'safe'],
+            [['firstname', 'middlename', 'lastname', 'gender', 'created_at', 'home_address', 'landline', 'cellphone'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class MyAddressSearch extends MyAddress
      */
     public function search($params)
     {
-        $query = MyAddress::find();
+        $query = Myaddress::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -63,7 +63,10 @@ class MyAddressSearch extends MyAddress
         $query->andFilterWhere(['like', 'firstname', $this->firstname])
             ->andFilterWhere(['like', 'middlename', $this->middlename])
             ->andFilterWhere(['like', 'lastname', $this->lastname])
-            ->andFilterWhere(['like', 'gender', $this->gender]);
+            ->andFilterWhere(['like', 'gender', $this->gender])
+            ->andFilterWhere(['like', 'home_address', $this->home_address])
+            ->andFilterWhere(['like', 'landline', $this->landline])
+            ->andFilterWhere(['like', 'cellphone', $this->cellphone]);
 
         return $dataProvider;
     }
