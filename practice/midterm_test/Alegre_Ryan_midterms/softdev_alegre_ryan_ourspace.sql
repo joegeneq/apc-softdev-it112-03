@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2015 at 07:11 PM
+-- Generation Time: Feb 28, 2015 at 07:45 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -38,6 +38,13 @@ CREATE TABLE IF NOT EXISTS `myaddress` (
   `cellphone` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `myaddress`
+--
+
+INSERT INTO `myaddress` (`id`, `firstname`, `middlename`, `lastname`, `gender`, `created_at`, `home_address`, `landline`, `cellphone`) VALUES
+(1, 'Juan', 'Santos', 'Dela Cruz', 'M', '2015-02-28 18:43:03', 'Manila', '', '09123456789');
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +58,13 @@ CREATE TABLE IF NOT EXISTS `mycomment` (
   `body` longtext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mycomment`
+--
+
+INSERT INTO `mycomment` (`id`, `myaddress_id`, `author`, `body`, `created_at`) VALUES
+(1, 1, 'Test Author', 'This is a test body for comment.', '2015-02-28 18:44:14');
 
 --
 -- Indexes for dumped tables
