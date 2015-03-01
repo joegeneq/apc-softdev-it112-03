@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            ['label' => 'Last Name', 'attribute' => 'myaddress.lastname'],
+            'myaddress_id',
             'author',
             'body:ntext',
             'created_at',

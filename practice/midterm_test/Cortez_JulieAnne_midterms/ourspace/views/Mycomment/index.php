@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\Myaddress;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\MyCommentSearch */
@@ -26,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            ['label' => 'Last Name', 'value' => 'myaddress.lastname'],
+            ['label' => 'Last Name', 'attribute' => 'myaddress_id', 'value' => 'myaddress.lastname'],
             'author',
             'body:ntext',
             'created_at',
