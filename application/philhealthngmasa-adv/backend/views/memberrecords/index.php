@@ -3,13 +3,17 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $searchModel app\models\MemberRecordsSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = 'Member Records';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="content">
+	<div class="wrap">
+		<div class="about-us">
+			<div class="about-header">
+				<h3>MEMBER RECORDS</h3>
+			</div>
+		</div>
+	</div>
+</div>			
 <div class="member-records-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
