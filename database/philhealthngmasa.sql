@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2015 at 05:25 AM
+-- Generation Time: Mar 11, 2015 at 12:34 AM
 -- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `philhealthngmasa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `barangay_personnel`
+--
+
+CREATE TABLE IF NOT EXISTS `barangay_personnel` (
+  `mem_phid` varchar(15) NOT NULL,
+  `per_datehired` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event`
+--
+
+CREATE TABLE IF NOT EXISTS `event` (
+  `ev_date` date NOT NULL,
+  `ev_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -67,6 +89,18 @@ CREATE TABLE IF NOT EXISTS `member_status` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `barangay_personnel`
+--
+ALTER TABLE `barangay_personnel`
+ ADD PRIMARY KEY (`mem_phid`);
+
+--
+-- Indexes for table `event`
+--
+ALTER TABLE `event`
+ ADD PRIMARY KEY (`ev_date`);
 
 --
 -- Indexes for table `member_records`
