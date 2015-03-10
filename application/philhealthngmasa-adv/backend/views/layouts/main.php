@@ -14,29 +14,23 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-	<title>Brgy. Bangkal PhilHealth ng Masa</title>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-	
-	<?= Html::cssFile('@web/css/style.css') ?>
-    <?= Html::cssFile('@web/css/responsiveslides.css') ?>
-		
-	
     <?php $this->head() ?>
 </head>
 <body>
     <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
-            
-             NavBar::begin([				 
+            NavBar::begin([
+                'brandLabel' => 'My Company',
+                'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
-			echo "<img src='images/headertext.png'>";
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
             ];
@@ -55,16 +49,21 @@ AppAsset::register($this);
             ]);
             NavBar::end();
         ?>
-			<div class="clear"> </div>
-		<?= $content ?>
-    </div>
-	
 
-<!---start-footer---->
-		<footer class="footer">
-			<center><p>Copyrights © 2015 Brgy. Bangkal PhilHealth ng Masa | IT112</p></center>
-		</footer>
-<!---End-footer---->
+        <div class="container">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= $content ?>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-right"><?= Yii::powered() ?></p>
+        </div>
+    </footer>
 
     <?php $this->endBody() ?>
 </body>

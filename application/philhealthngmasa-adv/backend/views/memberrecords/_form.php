@@ -12,53 +12,49 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'phid')->textInput(['maxlength' => 15]) ?>
+    <?= $form->field($model, 'mr_id')->textInput() ?>
 
-    <?= $form->field($model, 'zipcode')->textInput() ?>
+    <?= $form->field($model, 'mr_lname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'house_no')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'mr_fname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'city')->textInput(['maxlength' => 15]) ?>
+    <?= $form->field($model, 'mr_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mobile')->textInput(['maxlength' => 15]) ?>
+    <?= $form->field($model, 'mr_bdate')->textInput() ?>
 
-    <?= $form->field($model, 'home')->textInput(['maxlength' => 15]) ?>
+    <?= $form->field($model, 'mr_civ_stat')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'office')->textInput(['maxlength' => 15]) ?>
+    <?= $form->field($model, 'mr_gender')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'alt_email')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'mr_dependent')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'status')->textInput(['maxlength' => 15]) ?>
+    <?= $form->field($model, 'mr_type')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'lname')->textInput(['maxlength' => 30]) ?>
+    <?= $form->field($model, 'mr_house_no')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'fname')->textInput(['maxlength' => 30]) ?>
+    <?= $form->field($model, 'mr_street')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mname')->textInput(['maxlength' => 30]) ?>
+    <?= $form->field($model, 'mr_brarangay')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'birthdate')->textInput() ?>
+    <?= $form->field($model, 'mr_city')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'civilstat')->textInput(['maxlength' => 30]) ?>
+    <?= $form->field($model, 'mr_zipcode')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'gender')->textInput(['maxlength' => 6]) ?>
+    <?= $form->field($model, 'mr_status')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'dependent')->textInput(['maxlength' => 255]) ?>
+    <?= $form->field($model, 'mr_mobile')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'street')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'mr_tel_no')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'barangay')->textInput(['maxlength' => 15]) ?>
+    <?= $form->field($model, 'mr_office_no')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'emailad')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'mr_email_ad')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'regdate')->textInput() ?>
+    <?= $form->field($model, 'mr_alter_emal_ad')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'expdate')->textInput() ?>
+    <?= $form->field($model, 'mr_reg_date')->textInput() ?>
 
-    <?= $form->field($model, 'type')->textInput(['maxlength' => 25]) ?>
-
-    <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'image_url')->textInput(['maxlength' => 250]) ?>
+    <?= $form->field($model, 'mr_exp_date')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

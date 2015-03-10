@@ -18,8 +18,8 @@ class MemberStatusSearch extends MemberStatus
     public function rules()
     {
         return [
-            [['ms_id'], 'integer'],
-            [['mem_phid', 'ms_description', 'ms_date'], 'safe'],
+            [['ms_id', 'member_records_mr_id'], 'integer'],
+            [['ms_description', 'ms_date'], 'safe'],
         ];
     }
 
@@ -58,10 +58,10 @@ class MemberStatusSearch extends MemberStatus
         $query->andFilterWhere([
             'ms_id' => $this->ms_id,
             'ms_date' => $this->ms_date,
+            'member_records_mr_id' => $this->member_records_mr_id,
         ]);
 
-        $query->andFilterWhere(['like', 'mem_phid', $this->mem_phid])
-            ->andFilterWhere(['like', 'ms_description', $this->ms_description]);
+        $query->andFilterWhere(['like', 'ms_description', $this->ms_description]);
 
         return $dataProvider;
     }

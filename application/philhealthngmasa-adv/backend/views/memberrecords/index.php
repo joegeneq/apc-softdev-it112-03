@@ -3,17 +3,13 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+/* @var $this yii\web\View */
+/* @var $searchModel app\models\MemberRecordsSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Member Records';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="content">
-	<div class="wrap">
-		<div class="about-us">
-			<div class="about-header">
-				<h3>MEMBER RECORDS</h3>
-			</div>
-		</div>
-	</div>
-</div>			
 <div class="member-records-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -29,30 +25,28 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'phid',
-            'zipcode',
-            'house_no',
-            'city',
-            'mobile',
-            // 'home',
-            // 'office',
-            // 'alt_email:email',
-            // 'status',
-            // 'lname',
-            // 'fname',
-            // 'mname',
-            // 'birthdate',
-            // 'civilstat',
-            // 'gender',
-            // 'dependent',
-            // 'street',
-            // 'barangay',
-            // 'emailad:email',
-            // 'regdate',
-            // 'expdate',
-            // 'type',
-            // 'remarks:ntext',
-            // 'image_url:url',
+            'mr_id',
+            'mr_lname',
+            'mr_fname',
+            'mr_mname',
+            'mr_bdate',
+            // 'mr_civ_stat',
+            // 'mr_gender',
+            // 'mr_dependent',
+            // 'mr_type',
+            // 'mr_house_no',
+            // 'mr_street',
+            // 'mr_brarangay',
+            // 'mr_city',
+            // 'mr_zipcode',
+            // 'mr_status',
+            // 'mr_mobile',
+            // 'mr_tel_no',
+            // 'mr_office_no',
+            // 'mr_email_ad:email',
+            // 'mr_alter_emal_ad',
+            // 'mr_reg_date',
+            // 'mr_exp_date',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

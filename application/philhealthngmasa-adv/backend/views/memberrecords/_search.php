@@ -15,53 +15,49 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'phid') ?>
+    <?= $form->field($model, 'mr_id') ?>
 
-    <?= $form->field($model, 'zipcode') ?>
+    <?= $form->field($model, 'mr_lname') ?>
 
-    <?= $form->field($model, 'house_no') ?>
+    <?= $form->field($model, 'mr_fname') ?>
 
-    <?= $form->field($model, 'city') ?>
+    <?= $form->field($model, 'mr_mname') ?>
 
-    <?= $form->field($model, 'mobile') ?>
+    <?= $form->field($model, 'mr_bdate') ?>
 
-    <?php // echo $form->field($model, 'home') ?>
+    <?php // echo $form->field($model, 'mr_civ_stat') ?>
 
-    <?php // echo $form->field($model, 'office') ?>
+    <?php // echo $form->field($model, 'mr_gender') ?>
 
-    <?php // echo $form->field($model, 'alt_email') ?>
+    <?php // echo $form->field($model, 'mr_dependent') ?>
 
-    <?php // echo $form->field($model, 'status') ?>
+    <?php // echo $form->field($model, 'mr_type') ?>
 
-    <?php // echo $form->field($model, 'lname') ?>
+    <?php // echo $form->field($model, 'mr_house_no') ?>
 
-    <?php // echo $form->field($model, 'fname') ?>
+    <?php // echo $form->field($model, 'mr_street') ?>
 
-    <?php // echo $form->field($model, 'mname') ?>
+    <?php // echo $form->field($model, 'mr_brarangay') ?>
 
-    <?php // echo $form->field($model, 'birthdate') ?>
+    <?php // echo $form->field($model, 'mr_city') ?>
 
-    <?php // echo $form->field($model, 'civilstat') ?>
+    <?php // echo $form->field($model, 'mr_zipcode') ?>
 
-    <?php // echo $form->field($model, 'gender') ?>
+    <?php // echo $form->field($model, 'mr_status') ?>
 
-    <?php // echo $form->field($model, 'dependent') ?>
+    <?php // echo $form->field($model, 'mr_mobile') ?>
 
-    <?php // echo $form->field($model, 'street') ?>
+    <?php // echo $form->field($model, 'mr_tel_no') ?>
 
-    <?php // echo $form->field($model, 'barangay') ?>
+    <?php // echo $form->field($model, 'mr_office_no') ?>
 
-    <?php // echo $form->field($model, 'emailad') ?>
+    <?php // echo $form->field($model, 'mr_email_ad') ?>
 
-    <?php // echo $form->field($model, 'regdate') ?>
+    <?php // echo $form->field($model, 'mr_alter_emal_ad') ?>
 
-    <?php // echo $form->field($model, 'expdate') ?>
+    <?php // echo $form->field($model, 'mr_reg_date') ?>
 
-    <?php // echo $form->field($model, 'type') ?>
-
-    <?php // echo $form->field($model, 'remarks') ?>
-
-    <?php // echo $form->field($model, 'image_url') ?>
+    <?php // echo $form->field($model, 'mr_exp_date') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

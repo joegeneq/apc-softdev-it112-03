@@ -8,11 +8,11 @@ use Yii;
  * This is the model class for table "member_status".
  *
  * @property integer $ms_id
- * @property string $mem_phid
  * @property string $ms_description
  * @property string $ms_date
+ * @property integer $member_records_mr_id
  *
- * @property MemberRecords $memPh
+ * @property MemberRecords $memberRecordsMr
  */
 class MemberStatus extends \yii\db\ActiveRecord
 {
@@ -30,10 +30,10 @@ class MemberStatus extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['mem_phid'], 'required'],
+            [['ms_description', 'member_records_mr_id'], 'required'],
             [['ms_date'], 'safe'],
-            [['mem_phid'], 'string', 'max' => 15],
-            [['ms_description'], 'string', 'max' => 255]
+            [['member_records_mr_id'], 'integer'],
+            [['ms_description'], 'string', 'max' => 450]
         ];
     }
 
@@ -44,17 +44,17 @@ class MemberStatus extends \yii\db\ActiveRecord
     {
         return [
             'ms_id' => 'Ms ID',
-            'mem_phid' => 'Mem Phid',
             'ms_description' => 'Ms Description',
             'ms_date' => 'Ms Date',
+            'member_records_mr_id' => 'Member Records Mr ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMemPh()
+    public function getMemberRecordsMr()
     {
-        return $this->hasOne(MemberRecords::className(), ['phid' => 'mem_phid']);
+        return $this->hasOne(MemberRecords::className(), ['mr_id' => 'member_records_mr_id']);
     }
 }
