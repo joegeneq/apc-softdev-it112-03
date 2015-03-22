@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use common\models\MemberRecords;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\MemberStatus */
@@ -17,6 +19,15 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'ms_date')->textInput() -> label('DATE') ?>
 
     <?= $form->field($model, 'member_records_mr_id')->textInput() -> label('MEMBER ID') ?>
+
+    <?php
+        $member_records=memberrecords::find()->all();
+        $listData=ArrayHelper::map($member_records,'mr_id','mr_id');
+        echo $form->field($model, 'member_records_mr_id')->dropDownList(
+                                $listData,
+                               ['prompt'=>'Select Member ID...']);
+	?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

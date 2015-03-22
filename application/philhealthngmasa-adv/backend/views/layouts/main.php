@@ -25,7 +25,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => 'Brgy. Bangkal Philhealth ng Masa',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -37,10 +37,18 @@ AppAsset::register($this);
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
-                $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
+                $menuItems = [
+                    ['label' => 'Home', 'url' => ['/site/index']],
+                    ['label' => 'Admin', 'items' => [
+                        ['label' => 'Users', 'url' => ['/user/index']],
+                        ['label' => 'Member Records', 'url' => ['/memberrecords/index']],
+                        ['label' => 'Member Status', 'url' => ['/memberstatus/index']],
+                        ['label' => 'Event', 'url' => ['/Event/index']],
+                        ['label' => 'Event List', 'url' => ['/EventList/index']]
+                    ]],
+                    ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                        'url' => ['/site/logout'],
+                        'linkOptions' => ['data-method' => 'post']],
                 ];
             }
             echo Nav::widget([
