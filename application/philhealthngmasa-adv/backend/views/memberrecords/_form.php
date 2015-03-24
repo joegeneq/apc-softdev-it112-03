@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\MemberRecords */
@@ -20,7 +21,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'mr_mname')->textInput(['maxlength' => 45]) -> label('MIDDLE NAME') ?>
 
-    <?= $form->field($model, 'mr_bdate')->textInput() -> label('BIRTH DATE') ?>
+    <?= $form->field($model, 'mr_bdate')->widget(
+         DatePicker::className(), [
+        // inline too, not bad
+         'inline' => true, 
+         // modify template for custom rendering
+        'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);?>
 
     <?= $form->field($model, 'mr_civ_stat')->textInput(['maxlength' => 45]) -> label('CIVIL STATUS') ?>
 
@@ -52,9 +63,29 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'mr_alter_emal_ad')->textInput(['maxlength' => 45]) -> label('ALTER EMAIL ADDRESS') ?>
 
-    <?= $form->field($model, 'mr_reg_date')->textInput() -> label('REGISTER DATE') ?>
+    <?= $form->field($model, 'mr_reg_date')->widget(
+         DatePicker::className(), [
+        // inline too, not bad
+         'inline' => false, 
+         // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);?>
 
-    <?= $form->field($model, 'mr_exp_date')->textInput() -> label('EXPIRY DATE') ?>
+    <?= $form->field($model, 'mr_exp_date')->widget(
+         DatePicker::className(), [
+        // inline too, not bad
+         'inline' => false, 
+         // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
