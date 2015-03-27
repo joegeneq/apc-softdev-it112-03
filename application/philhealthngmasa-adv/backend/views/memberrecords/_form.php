@@ -33,9 +33,9 @@ use dosamigos\datepicker\DatePicker;
         ]
     ]);?>
 
-    <?= $form->field($model, 'mr_civ_stat')->textInput(['maxlength' => 45]) -> label('CIVIL STATUS') ?>
+    <?php echo $form->field($model, 'mr_civ_stat')->dropDownList(['Single' => 'Single', 'Married' => 'Married']); ?>
 
-    <?= $form->field($model, 'mr_gender')->textInput(['maxlength' => 45]) -> label('GENDER') ?>
+    <?php echo $form->field($model, 'mr_gender')->dropDownList(['Female' => 'Female', 'Male' => 'Male']); ?>
 
     <?= $form->field($model, 'mr_dependent')->textInput(['maxlength' => 45]) -> label('DEPENDENT') ?>
 
@@ -43,7 +43,8 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'mr_house_no')->textInput(['maxlength' => 45]) -> label('HOUSE #') ?>
 
-    <?= $form->field($model, 'mr_street')->textInput(['maxlength' => 45]) -> label('STREET') ?>
+    <?php echo $form->field($model, 'mr_street')->dropDownList(['Street1' => 'Street1', 'Street2' => 'Street2', 'Street3' => 'Street3', 'Street4' => 'Street4',
+        'Street5' => 'Street5', 'Street6' => 'Street6']); ?>
 
     <?= $form->field($model, 'mr_brarangay')->textInput(['maxlength' => 45]) -> label('BARANGAY') ?>
 
