@@ -9,10 +9,10 @@ $this->title = 'Brgy. Bangkal Philhealth ng Masa';
 					<ul>
 
 						<li class="active"><a href="index.html">HOME</a></li>
-						<li><a href="./index.php?r=site%2Fabout">ABOUT US</a></li>
-						<li><a href="./index.php?r=site%2Fcontact">PHILHEALTH NG MASA</a></li>
-						<li><a href="./index.php?r=site%2Fabout">SEARCH MEMBER</a></li>
-						<li><a href="./index.php?r=site%2Fcontact">EVENTS</a></li>
+                		<li><a href="./index.php?r=site%2Fabout">ABOUT US</a></li>
+                		<li><a href="./index.php?r=site%2Fabout">SEARCH MEMBER</a></li>
+                		<li><a href="./index.php?r=site%2Fabout">EVENTS</a></li>
+                		<li><a href="./index.php?r=site%2Fcontact">CONTACT</a></li>
 
 					</ul>
 				</div>
@@ -47,30 +47,6 @@ $this->title = 'Brgy. Bangkal Philhealth ng Masa';
 			<center>	
 			<div class="services">
 					<div class="wrap">					  
-					   <div class="section group group">
-							<div class="listview_1_of_2 images_1_of_2">
-								<div class="listimg listimg_2_of_1">
-									  <img src="images/PNM.png">
-								</div>
-							    <div class="text list_2_of_1">
-									<h3><span>PHILHEALTH NG MASA MEMBER</span></h3>
-									<h4>Sed ut perspiciatis undeaccusantium .</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
-									 <a class="button" href="#">Learn More</a>
-							   </div>
-						   </div>			
-							<div class="listview_1_of_2 images_1_of_2">
-								<div class="listimg listimg_2_of_1">
-									  <img src="images/search.png">
-								</div>
-								<div class="text list_2_of_1">
-									  <h3><span>SEARCH MEMBER</span></h3>
-									  <h4>Sed ut perspiciatis undeaccusantium .</h4>
-									 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
-									  <a class="button" href="#">Learn More</a>
-								</div>
-							</div>
-						</div>
 						<div class="section group">
 							<div class="listview_1_of_2 images_1_of_2">
 								<div class="listimg listimg_2_of_1">
