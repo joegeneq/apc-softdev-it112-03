@@ -48,7 +48,7 @@ class MemberRecords extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['mr_id', 'mr_lname', 'mr_fname', 'mr_mname', 'mr_bdate', 'mr_civ_stat', 'mr_gender', 'mr_dependent', 'mr_type', 'mr_house_no', 'mr_status', 'mr_mobile', 'mr_reg_date', 'mr_exp_date'], 'required'],
+            [['mr_lname', 'mr_fname', 'mr_mname', 'mr_bdate', 'mr_civ_stat', 'mr_gender', 'mr_dependent', 'mr_type', 'mr_house_no', 'mr_status', 'mr_mobile', 'mr_reg_date', 'mr_exp_date'], 'required'],
             [['mr_id'], 'integer'],
             [['mr_bdate', 'mr_reg_date', 'mr_exp_date'], 'safe'],
             [['mr_lname', 'mr_fname', 'mr_mname', 'mr_civ_stat', 'mr_gender', 'mr_dependent', 'mr_type', 'mr_house_no', 'mr_street', 'mr_brarangay', 'mr_city', 'mr_zipcode', 'mr_status', 'mr_mobile', 'mr_tel_no', 'mr_office_no', 'mr_email_ad', 'mr_alter_emal_ad'], 'string', 'max' => 45]

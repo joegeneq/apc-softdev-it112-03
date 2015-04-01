@@ -41,8 +41,8 @@ AppAsset::register($this);
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'Admin', 'items' => [
                         ['label' => 'Users', 'url' => ['/user/index']],
-                        ['label' => 'Member Records', 'url' => ['/memberrecords/index']],
-                        ['label' => 'Member Status', 'url' => ['/memberstatus/index']],
+                        ['label' => 'Member Records', 'url' => ['/member-records/index']],
+                        ['label' => 'Member Status', 'url' => ['/member-status/index']],
                         ['label' => 'Event', 'url' => ['/Event/index']],
                         ['label' => 'Event List', 'url' => ['/EventList/index']]
                     ]],
