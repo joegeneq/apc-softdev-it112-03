@@ -39,9 +39,9 @@ class RenewList extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'rl_control_no' => 'Rl Control No',
-            'rl_date_created' => 'Rl Date Created',
-            'member_records_mr_id' => 'Member Records Mr ID',
+            'rl_control_no' => 'Control No',
+            'rl_date_created' => 'Date Created',
+            'member_records_mr_id' => 'Member ID',
         ];
     }
 }
