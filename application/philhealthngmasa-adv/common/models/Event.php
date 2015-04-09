@@ -42,8 +42,8 @@ class Event extends \yii\db\ActiveRecord
     {
         return [
             'ev_id' => 'Ev ID',
-            'ev_name' => 'Ev Name',
-            'ev_description' => 'Ev Description',
+            'ev_name' => 'Event Name',
+            'ev_description' => 'Event Description',
         ];
     }
 
