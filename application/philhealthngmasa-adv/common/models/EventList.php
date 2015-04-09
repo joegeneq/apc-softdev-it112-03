@@ -47,9 +47,9 @@ class EventList extends \yii\db\ActiveRecord
     {
         return [
             'el_ctrlno' => 'El Ctrlno',
-            'el_date' => 'El Date',
-            'el_event' => 'El Event',
-            'el_venue' => 'El Venue',
+            'el_date' => 'Date of Event',
+            'el_event' => 'Event Name',
+            'el_venue' => 'Event Venue',
             'mr_id' => 'Mr ID',
             'ev_id' => 'Ev ID',
         ];
