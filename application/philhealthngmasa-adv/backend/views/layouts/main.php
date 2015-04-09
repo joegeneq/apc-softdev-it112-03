@@ -43,8 +43,8 @@ AppAsset::register($this);
                         ['label' => 'Users', 'url' => ['/user/index']],
                         ['label' => 'Member Records', 'url' => ['/member-records/index']],
                         ['label' => 'Member Status', 'url' => ['/member-status/index']],
-                        ['label' => 'Event', 'url' => ['/Event/index']],
-                        ['label' => 'Event List', 'url' => ['/EventList/index']]
+                        ['label' => 'Event', 'url' => ['/event/index']],
+                        ['label' => 'Event List', 'url' => ['/event-list/index']]
                     ]],
                     ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                         'url' => ['/site/logout'],
