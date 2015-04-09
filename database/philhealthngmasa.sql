@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2015 at 11:38 AM
+-- Generation Time: Apr 09, 2015 at 04:12 PM
 -- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -38,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `barangay_personnel` (
 --
 
 CREATE TABLE IF NOT EXISTS `event` (
-  `ev_id` int(11) NOT NULL,
+`ev_id` int(11) NOT NULL,
   `ev_name` varchar(45) DEFAULT NULL,
   `ev_description` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `event` (
 --
 
 CREATE TABLE IF NOT EXISTS `event_list` (
-  `el_ctrlno` int(11) NOT NULL,
+`el_ctrlno` int(11) NOT NULL,
   `el_date` date DEFAULT NULL,
   `el_event` varchar(45) DEFAULT NULL,
   `el_venue` varchar(45) DEFAULT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `event_list` (
 --
 
 CREATE TABLE IF NOT EXISTS `member_records` (
-`mr_id` int(11) NOT NULL,
+  `mr_id` int(11) NOT NULL,
   `mr_lname` varchar(45) NOT NULL,
   `mr_fname` varchar(45) NOT NULL,
   `mr_mname` varchar(45) NOT NULL,
@@ -87,17 +87,16 @@ CREATE TABLE IF NOT EXISTS `member_records` (
   `mr_alter_emal_ad` varchar(45) DEFAULT NULL,
   `mr_reg_date` date NOT NULL,
   `mr_exp_date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12346 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `member_records`
 --
 
 INSERT INTO `member_records` (`mr_id`, `mr_lname`, `mr_fname`, `mr_mname`, `mr_bdate`, `mr_civ_stat`, `mr_gender`, `mr_dependent`, `mr_type`, `mr_house_no`, `mr_street`, `mr_brarangay`, `mr_city`, `mr_zipcode`, `mr_status`, `mr_mobile`, `mr_tel_no`, `mr_office_no`, `mr_email_ad`, `mr_alter_emal_ad`, `mr_reg_date`, `mr_exp_date`) VALUES
-(111, 'Atok', 'Mariz', 'Bautista', '1989-02-01', 'a', 'a', 'test', 'test', '123', 'c', 'Bangkal', 'Makati', '1233', 'test', '09123456789', '9999999', '', '', '', '2015-03-04', '2016-03-03'),
-(1222, 'Atok', 'Mariz', 'Bautista', '1999-03-11', 'Single', 'Female', 'test', 'test', '222', 'Street1', 'Bangkal', 'Makati', '1233', 'test', 'test', '', '', '', '', '2015-03-04', '2016-03-04'),
-(1234, 'Atok', 'Mariz', 'Bautista', '0000-00-00', 'Single', 'Female', 'test', 'test', '123', 'test', 'Bangkal', 'Makati', '1233', 'test', '09123456789', '', '', '', '', '0000-00-00', '0000-00-00'),
-(12345, 'Atok', 'Mariz', 'Bautista', '1995-06-20', 'test', 'test', 'test', 'test', 'test', 'test', 'bangkal', 'makati', '1233', 'test', '09123456789', '', '', '', '', '2015-03-10', '2016-05-05');
+(123, 'Alegre', 'Ryan', 'Globio', '1994-12-14', 'Single', 'Male', 'Ricardo Alegre', 'Member', '12334', 'Street1', 'Bangkal', 'Makati City', '1233', 'test', '09123456789', '', '', '', '', '2015-03-20', '2016-03-20'),
+(124, 'Cortez', 'Julie Anne', 'Neri', '1995-07-16', 'Single', 'Female', 'Elizabeth Cortez', 'Member', '456', 'Street', 'Bangkal', 'Makati City', '1233', 'test', '09213456789', '', '', '', '', '2015-03-20', '2016-03-20'),
+(1234, 'Atok', 'Mariz', 'Bautista', '2015-03-20', 'Single', 'Female', 'Margie Atok', 'test', '123', 'test', 'Bangkal', 'Makati City', '1233', 'test', '09123456789', '', '', '', '', '2015-03-20', '2016-03-20');
 
 -- --------------------------------------------------------
 
@@ -106,7 +105,7 @@ INSERT INTO `member_records` (`mr_id`, `mr_lname`, `mr_fname`, `mr_mname`, `mr_b
 --
 
 CREATE TABLE IF NOT EXISTS `member_status` (
-`ms_id` int(11) NOT NULL,
+  `ms_id` int(11) NOT NULL,
   `ms_description` varchar(450) NOT NULL,
   `ms_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `member_records_mr_id` int(11) NOT NULL
@@ -169,15 +168,15 @@ ALTER TABLE `renew_list`
 --
 
 --
--- AUTO_INCREMENT for table `member_records`
+-- AUTO_INCREMENT for table `event`
 --
-ALTER TABLE `member_records`
-MODIFY `mr_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12346;
+ALTER TABLE `event`
+MODIFY `ev_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=124;
 --
--- AUTO_INCREMENT for table `member_status`
+-- AUTO_INCREMENT for table `event_list`
 --
-ALTER TABLE `member_status`
-MODIFY `ms_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `event_list`
+MODIFY `el_ctrlno` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
