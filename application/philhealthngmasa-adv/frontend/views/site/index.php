@@ -10,7 +10,7 @@ $this->title = 'Brgy. Bangkal Philhealth ng Masa';
 
 						<li class="active"><a href="index.html">HOME</a></li>
                 		<li><a href="./index.php?r=site%2Fabout">ABOUT US</a></li>
-                		<li><a href="./index.php?r=site%2Fabout">SEARCH MEMBER</a></li>
+                		<li><a href="./index.php?r=site%2Fsearchmember">SEARCH MEMBER</a></li>
                 		<li><a href="./index.php?r=site%2Fabout">EVENTS</a></li>
                 		<li><a href="./index.php?r=site%2Fcontact">CONTACT</a></li>
 

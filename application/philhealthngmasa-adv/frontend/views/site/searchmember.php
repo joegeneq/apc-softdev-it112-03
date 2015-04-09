@@ -29,50 +29,126 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="clear"> </div>
         <!---start-content---->
     <div class="content">
-
-<div class="section group">             
-    <div class="col span_1_of_3">
-        <div class="contact_info">
-            <h3>Find Us Here</h3>
-                <div class="map">
-                    <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:0.85em">View Larger Map</a></small>
-                </div>
-        </div>
-        <div class="company_address">
-            <h3>Company Information :</h3>
-             <p>500 Lorem Ipsum Dolor Sit,</p>
-             <p>22-56-2-9 Sit Amet, Lorem,</p>
-             <p>USA</p>
-             <p>Phone:(00) 222 666 444</p>
-             <p>Fax: (000) 000 00 00 0</p>
-            <p>Email: <span>info(at)mycompany.com</span></p>
-             <p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
-         </div>
-    </div>      
-
-    <div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-    </p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
-                <?= $form->field($model, 'name') ?>
-                <?= $form->field($model, 'email') ?>
-                <?= $form->field($model, 'subject') ?>
-                <?= $form->field($model, 'body')->textArea(['rows' => 6]) ?>
-                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                ]) ?>
-                <div class="form-group">
-                    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                </div>
-            <?php ActiveForm::end(); ?>
-        </div>
-    </div>
-</div>
-
-</div>
+				<!---start-services---->
+				<div class="services">
+					<div class="wrap">
+					  <div class="services-header">
+						<h3>Services</h3>
+					 </div>
+					   <div class="section group group">
+							<div class="listview_1_of_2 images_1_of_2">
+								<div class="listimg listimg_2_of_1">
+									  <img src="images/res.png">
+								</div>
+							    <div class="text list_2_of_1">
+									<h3><span>Travel</span> Resources</h3>
+									<h4>Sed ut perspiciatis undeaccusantium .</h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
+									 <a class="button" href="#">Learn More</a>
+							   </div>
+						   </div>			
+							<div class="listview_1_of_2 images_1_of_2">
+								<div class="listimg listimg_2_of_1">
+									  <img src="images/guid.png">
+								</div>
+								<div class="text list_2_of_1">
+									  <h3><span>Access</span> Guides</h3>
+									  <h4>Sed ut perspiciatis undeaccusantium .</h4>
+									 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
+									  <a class="button" href="#">Learn More</a>
+								</div>
+							</div>
+						</div>
+						<div class="section group">
+							<div class="listview_1_of_2 images_1_of_2">
+								<div class="listimg listimg_2_of_1">
+									  <img src="images/air.png">
+								</div>
+							    <div class="text list_2_of_1 ">
+									<h3><span>Airline</span> Travels</h3>
+									<h4>Sed ut perspiciatis undeaccusantium .</h4>
+									   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
+									 <a class="button" href="#">Learn More</a>
+							   </div>
+						   </div>			
+							<div class="listview_1_of_2 images_1_of_2">
+								<div class="listimg listimg_2_of_1">
+									  <img src="images/compin.png">
+								</div>
+								<div class="text list_2_of_1">
+									  <h3><span>Travel </span>Companions</h3>
+									  <h4>Sed ut perspiciatis undeaccusantium .</h4>
+									    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
+									  <a class="button" href="#">Learn More</a>
+								</div>
+							</div>
+						</div>
+				  </div>
+				</div>
+				<!---End-services---->
+				<div class="specials">
+				   <div class="wrap">
+					<div class="specials-heading">
+					  <h3>Latest-News</h3>
+					</div>
+					<div class="specials-grids">
+						<div class="special-grid">
+							<img src="images/grids-img1.jpg" title="image-name" />
+							<a href="#">Latest Plans</a>
+							<p>Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
+						</div>
+						<div class="special-grid">
+							<img src="images/grids-img2.jpg" title="image-name" />
+							<a href="#">Pre Plans</a>
+							<p>Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
+						</div>
+						<div class="special-grid spe-grid">
+							<img src="images/grids-img3.jpg" title="image-name" />
+							<a href="#">Free Plans</a>
+							<p>Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
+						</div>
+						<div class="clear"> </div>
+					</div>
+			   </div>
+			</div>	
+		</div>
+		<!---End-content---->
+		<!---start-footer---->
+		<div class="footer">
+			<div class="wrap">
+			<div class="footer-grids">
+				<div class="footer-grid">
+					<h3>EXTRAS</h3>
+					<p>Ut rutrum neque a mollis laoreet diam enim feuiat dui nec ulacoper quam felis id diam. Nunc ut tortor ligula eu petiu risus. Pelleesque conquat dignissim lacus quis altrcies.</p>
+				</div>
+				<div class="footer-grid">
+					<h3>RECENT POSTS</h3>
+					<ul>
+						<li><a href="#">Vestibulum felis</a></li>
+						<li><a href="#">Mauris at tellus</a></li>
+						<li><a href="#">Donec ut lectus</a></li>
+						<li><a href="#">vitae interdum</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid">
+					<h3>USEFUL INFO</h3>
+					<ul>
+						<li><a href="#">Hendrerit quam</a></li>
+						<li><a href="#">Amet consectetur </a></li>
+						<li><a href="#">Iquam hendrerit</a></li>
+						<li><a href="#">Donec ut lectus </a></li>
+					</ul>
+				</div>
+				<div class="footer-grid footer-lastgrid">
+					<h3>CONTACT US</h3>
+					<p>Pelleesque conquat dignissim lacus quis altrcies.</p>
+					<div class="footer-grid-address">
+						<p>Tel.800-255-9999</p>
+						<p>Fax: 1234 568</p>
+						<p>Email:<a class="email-link" href="#">info(at)yourcompany.com</a></p>
+					</div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			</div>
+		</div>
