@@ -44,7 +44,9 @@ AppAsset::register($this);
                         ['label' => 'Member Records', 'url' => ['/member-records/index']],
                         ['label' => 'Member Status', 'url' => ['/member-status/index']],
                         ['label' => 'Event', 'url' => ['/event/index']],
-                        ['label' => 'Event List', 'url' => ['/event-list/index']]
+                        ['label' => 'Event List', 'url' => ['/event-list/index']],
+                        ['label' => 'Renew List', 'url' => ['/renew-list/index']],
+                        ['label' => 'Barangay Personnel', 'url' => ['/barangay-personnel/index']],
                     ]],
                     ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                         'url' => ['/site/logout'],
