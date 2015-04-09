@@ -62,7 +62,7 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'mr_alter_emal_ad')->textInput(['maxlength' => 45]) -> label('ALTER EMAIL ADDRESS') ?>
 
-    <?= $form->field($model, 'mr_reg_date')->widget(
+    <?= $form->field($model, 'mr_reg_date') -> label('Register Date') ->widget(
          DatePicker::className(), [
         // inline too, not bad
          'inline' => false, 
@@ -74,7 +74,7 @@ use dosamigos\datepicker\DatePicker;
         ]
     ]);?>
 
-    <?= $form->field($model, 'mr_exp_date')->widget(
+    <?= $form->field($model, 'mr_exp_date') -> label('Expiry Date')->widget(
          DatePicker::className(), [
         // inline too, not bad
          'inline' => false, 

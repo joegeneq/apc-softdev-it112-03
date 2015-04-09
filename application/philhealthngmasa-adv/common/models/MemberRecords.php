@@ -61,11 +61,11 @@ class MemberRecords extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'mr_id' => 'Mr ID',
-            'mr_lname' => 'Mr Lname',
-            'mr_fname' => 'Mr Fname',
-            'mr_mname' => 'Mr Mname',
-            'mr_bdate' => 'Mr Bdate',
+            'mr_id' => 'ID',
+            'mr_lname' => 'Last Name',
+            'mr_fname' => 'First Name',
+            'mr_mname' => 'Middle Name',
+            'mr_bdate' => 'Birthdate',
             'mr_civ_stat' => 'Mr Civ Stat',
             'mr_gender' => 'Mr Gender',
             'mr_dependent' => 'Mr Dependent',
