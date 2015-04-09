@@ -13,11 +13,11 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'mr_lname')->textInput(['maxlength' => 45]) -> label('LAST NAME') ?>
+    <?= $form->field($model, 'mr_lname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_fname')->textInput(['maxlength' => 45]) -> label('FIRST NAME') ?>
+    <?= $form->field($model, 'mr_fname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_mname')->textInput(['maxlength' => 45]) -> label('MIDDLE NAME') ?>
+    <?= $form->field($model, 'mr_mname')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'mr_bdate')->widget(
          DatePicker::className(), [
@@ -31,40 +31,41 @@ use dosamigos\datepicker\DatePicker;
         ]
     ]);?>
 
-    <?php echo $form->field($model, 'mr_civ_stat') -> label('Civil Status')->dropDownList(['Single' => 'Single', 'Married' => 'Married', 
-                                                                'Widow(er)' => 'Widow(er)', 'Legally Separated' => 'Legally Separated']); ?>
+    <?php echo $form->field($model, 'mr_civ_stat') ->dropDownList(['' => '--Select--', 'Single' => 'Single', 'Married' => 'Married',
+        'Widow(er)' => 'Widow(er)', 'Legally Separated' => 'Legally Separated']); ?>
 
-    <?php echo $form->field($model, 'mr_gender') -> label('GENDER')->dropDownList(['Female' => 'Female', 'Male' => 'Male']); ?>
+    <?php echo $form->field($model, 'mr_gender') ->dropDownList(['' => '--Select--', 'Male' => 'Male', 'Female' => 'Female']); ?>
 
-    <?= $form->field($model, 'mr_dependent')->textInput(['maxlength' => 45]) -> label('DEPENDENT') ?>
+    <?= $form->field($model, 'mr_dependent')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_type')->textInput(['maxlength' => 45]) -> label('TYPE') ?>
+    <?= $form->field($model, 'mr_type')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_house_no')->textInput(['maxlength' => 45]) -> label('HOUSE #') ?>
+    <?= $form->field($model, 'mr_house_no')->textInput(['maxlength' => 45]) ?>
 
-    <?php echo $form->field($model, 'mr_street') -> label('STREET')->dropDownList(['Malvar' => 'Malvar', 'Macabulos' => 'Macabulos', 'Estrella' => 'Estrella', 
-    'Dallas' => 'Dallas', 'Apolinario' => 'Apolinario', 'Lacuña' => 'Lacuña', 'Garcia' => 'Garcia', 'Hizon' => 'Hizon', 'Tinio' => 'Tinio',
-    'Mpjica' => 'Mojica', 'Del Pilar' => 'Del Pilar']); ?>
+    <?php echo $form->field($model, 'mr_street') ->dropDownList(['' => '--Select--', 'Malvar' => 'Malvar', 'Macabulos' => 'Macabulos', 'Estrella' => 'Estrella', 
+        'Dallas' => 'Dallas', 'Apolinario' => 'Apolinario', 'Lacuña' => 'Lacuña', 'Garcia' => 'Garcia',
+        'Hizon' => 'Hizon', 'Tinio' => 'Tinio',
+        'Mpjica' => 'Mojica', 'Del Pilar' => 'Del Pilar']); ?>
 
-    <?= $form->field($model, 'mr_brarangay') -> label('BARANGAY')->dropDownList(['Barangay Bangkal' => 'Barangay Bangkal']);?>
+    <?= $form->field($model, 'mr_brarangay') ->dropDownList(['' => '--Select--', 'Barangay Bangkal' => 'Barangay Bangkal']);?>
 
-    <?= $form->field($model, 'mr_city') -> label('CITY')->dropDownList(['Makati City' => 'Makati City']);?>
+    <?= $form->field($model, 'mr_city') ->dropDownList(['' => '--Select--', 'Makati City' => 'Makati City']);?>
 
-    <?= $form->field($model, 'mr_zipcode') -> label('ZIPCODE')->dropDownList(['1233' => '1233']);?>
+    <?= $form->field($model, 'mr_zipcode') ->dropDownList(['' => '--Select--', '1233' => '1233']);?>
 
-    <?= $form->field($model, 'mr_status') -> label('STATUS')->dropDownList(['New Applicant' => 'New Applicant', 'Renewed' => 'Renewed', ]);?>
+    <?= $form->field($model, 'mr_status') ->dropDownList(['' => '--Select--', 'New Applicant' => 'New Applicant', 'Renewed' => 'Renewed', ]);?>
 
-    <?= $form->field($model, 'mr_mobile')->textInput(['maxlength' => 45]) -> label('MOBILE') ?>
+    <?= $form->field($model, 'mr_mobile')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_tel_no')->textInput(['maxlength' => 45]) -> label('TELEPHONE #') ?>
+    <?= $form->field($model, 'mr_tel_no')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_office_no')->textInput(['maxlength' => 45]) -> label('OFFICE #') ?>
+    <?= $form->field($model, 'mr_office_no')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_email_ad')->textInput(['maxlength' => 45]) -> label('EMAIL ADDRESS') ?>
+    <?= $form->field($model, 'mr_email_ad')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_alter_emal_ad')->textInput(['maxlength' => 45]) -> label('ALTER EMAIL ADDRESS') ?>
+    <?= $form->field($model, 'mr_alter_emal_ad')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_reg_date') -> label('REGISTER DATE') ->widget(
+    <?= $form->field($model, 'mr_reg_date') ->widget(
          DatePicker::className(), [
         // inline too, not bad
          'inline' => false, 
@@ -76,7 +77,7 @@ use dosamigos\datepicker\DatePicker;
         ]
     ]);?>
 
-    <?= $form->field($model, 'mr_exp_date') -> label('EXPIRY DATE')->widget(
+    <?= $form->field($model, 'mr_exp_date') ->widget(
          DatePicker::className(), [
         // inline too, not bad
          'inline' => false, 

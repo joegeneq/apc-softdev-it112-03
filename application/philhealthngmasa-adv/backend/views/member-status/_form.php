@@ -23,7 +23,7 @@ use common\models\MemberRecords;
         $listData=ArrayHelper::map($member_records,'mr_id','mr_id');
         echo $form->field($model, 'member_records_mr_id')->dropDownList(
                                 $listData,
-                               ['prompt'=>'Select Member ID...']);
+                               ['prompt'=>'--Select--']);
 	?>
 
 
