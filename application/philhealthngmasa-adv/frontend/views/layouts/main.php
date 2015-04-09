@@ -15,16 +15,16 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-	<title>Brgy. Bangkal PhilHealth ng Masa</title>
+        <title>Brgy. Bangkal PhilHealth ng Masa</title>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-	
-	<?= Html::cssFile('@web/css/style.css') ?>
+        
+        <?= Html::cssFile('@web/css/style.css') ?>
     <?= Html::cssFile('@web/css/responsiveslides.css') ?>
-	
-	
+        
+        
     <?php $this->head() ?>
 </head>
 <body>
@@ -32,39 +32,25 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             echo "<img src='images/headertext.png'>";
-             NavBar::begin([				 
+             NavBar::begin([                             
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
-			echo "<img src='images/headertext.png'>";
+                        echo "<img src='images/headertext.png'>";
             
-            if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            } else {
-                $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
-            }
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => $menuItems,
-            ]);
             NavBar::end();
         ?>
     </div>
-	
+        
 
-	
-	<?= $content ?>
+        
+        <?= $content ?>
 
 <!---start-footer---->
-		<footer class="copy-right">
-			<p>Copyrights © 2015 Brgy. Bangkal PhilHealth ng Masa | IT112</p>
-		</footer>
+                <footer class="copy-right">
+                        <p>Copyrights © 2015 Brgy. Bangkal PhilHealth ng Masa | IT112</p>
+                </footer>
 <!---End-footer---->
 
     <?php $this->endBody() ?>

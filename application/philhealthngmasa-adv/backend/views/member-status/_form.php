@@ -18,8 +18,6 @@ use common\models\MemberRecords;
 
     <?= $form->field($model, 'ms_date')->textInput() -> label('DATE') ?>
 
-    <?= $form->field($model, 'member_records_mr_id')->textInput() -> label('MEMBER ID') ?>
-
     <?php
         $member_records=memberrecords::find()->all();
         $listData=ArrayHelper::map($member_records,'mr_id','mr_id');

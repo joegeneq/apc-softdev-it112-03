@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'mr_lname',
             'mr_fname',
             'mr_mname',
-            'mr_bdate',
+            //'mr_bdate',
             // 'mr_civ_stat',
             // 'mr_gender',
             // 'mr_dependent',
