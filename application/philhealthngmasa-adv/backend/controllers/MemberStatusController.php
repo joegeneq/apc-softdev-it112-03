@@ -8,6 +8,7 @@ use common\models\MemberStatusSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * MemberStatusController implements the CRUD actions for MemberStatus model.
@@ -17,6 +18,16 @@ class MemberStatusController extends Controller
     public function behaviors()
     {
         return [
+            'acces'=>[
+                'class'=>AccessControl::classname(),
+                'only'=>['create','update'],
+                'rules'=>[
+                    [
+                        'allow'=>true,
+                        'roles'=>['@']
+                    ],
+                ]
+            ],            
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
