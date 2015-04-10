@@ -20,7 +20,7 @@ class MemberStatusController extends Controller
         return [
             'acces'=>[
                 'class'=>AccessControl::classname(),
-                'only'=>['create','update'],
+                'only'=>['create','update', 'delete'],
                 'rules'=>[
                     [
                         'allow'=>true,
