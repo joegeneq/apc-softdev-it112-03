@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2015 at 04:12 PM
+-- Generation Time: Apr 10, 2015 at 06:04 AM
 -- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- PHP Version: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `event_list` (
 --
 
 CREATE TABLE IF NOT EXISTS `member_records` (
-  `mr_id` int(11) NOT NULL,
+`mr_id` int(11) NOT NULL,
   `mr_lname` varchar(45) NOT NULL,
   `mr_fname` varchar(45) NOT NULL,
   `mr_mname` varchar(45) NOT NULL,
@@ -87,16 +87,16 @@ CREATE TABLE IF NOT EXISTS `member_records` (
   `mr_alter_emal_ad` varchar(45) DEFAULT NULL,
   `mr_reg_date` date NOT NULL,
   `mr_exp_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=201500004 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `member_records`
 --
 
 INSERT INTO `member_records` (`mr_id`, `mr_lname`, `mr_fname`, `mr_mname`, `mr_bdate`, `mr_civ_stat`, `mr_gender`, `mr_dependent`, `mr_type`, `mr_house_no`, `mr_street`, `mr_brarangay`, `mr_city`, `mr_zipcode`, `mr_status`, `mr_mobile`, `mr_tel_no`, `mr_office_no`, `mr_email_ad`, `mr_alter_emal_ad`, `mr_reg_date`, `mr_exp_date`) VALUES
-(123, 'Alegre', 'Ryan', 'Globio', '1994-12-14', 'Single', 'Male', 'Ricardo Alegre', 'Member', '12334', 'Street1', 'Bangkal', 'Makati City', '1233', 'test', '09123456789', '', '', '', '', '2015-03-20', '2016-03-20'),
-(124, 'Cortez', 'Julie Anne', 'Neri', '1995-07-16', 'Single', 'Female', 'Elizabeth Cortez', 'Member', '456', 'Street', 'Bangkal', 'Makati City', '1233', 'test', '09213456789', '', '', '', '', '2015-03-20', '2016-03-20'),
-(1234, 'Atok', 'Mariz', 'Bautista', '2015-03-20', 'Single', 'Female', 'Margie Atok', 'test', '123', 'test', 'Bangkal', 'Makati City', '1233', 'test', '09123456789', '', '', '', '', '2015-03-20', '2016-03-20');
+(201500001, 'Atok', 'Mariz', 'Bautista', '1989-06-20', 'Single', 'Female', 'Test', 'Test', '346', 'Lacuña', 'Barangay Bangkal', 'Makati City', '1233', 'New Applicant', '09123456789', '', '', '', '', '2015-04-09', '2016-04-09'),
+(201500002, 'Cortez', 'Leean', 'Neri', '1990-07-16', 'Single', 'Female', 'Test1', 'Test1', '123', 'Malvar', 'Barangay Bangkal', 'Makati City', '1233', 'Renewed', '09123456789', '', '', '', '', '2015-04-10', '2016-04-10'),
+(201500003, 'Alegre', 'Ryan', 'Globio', '1990-12-11', 'Married', 'Male', 'Test2', 'Test2', '231', 'Estrella', 'Barangay Bangkal', 'Makati City', '1233', 'New Applicant', '09321456789', '', '', '', '', '2015-04-11', '2016-04-04');
 
 -- --------------------------------------------------------
 
@@ -105,11 +105,21 @@ INSERT INTO `member_records` (`mr_id`, `mr_lname`, `mr_fname`, `mr_mname`, `mr_b
 --
 
 CREATE TABLE IF NOT EXISTS `member_status` (
-  `ms_id` int(11) NOT NULL,
+`ms_id` int(11) NOT NULL,
   `ms_description` varchar(450) NOT NULL,
   `ms_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `member_records_mr_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `member_status`
+--
+
+INSERT INTO `member_status` (`ms_id`, `ms_description`, `ms_date`, `member_records_mr_id`) VALUES
+(1, 'test1', '2015-04-10 03:46:51', 201500001),
+(2, 'test3', '2015-04-10 03:56:26', 201500002),
+(3, 'Test2', '2015-04-10 03:47:18', 201500003),
+(4, 'test4', '2015-04-10 04:03:27', 201500001);
 
 -- --------------------------------------------------------
 
@@ -178,6 +188,16 @@ MODIFY `ev_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=124;
 ALTER TABLE `event_list`
 MODIFY `el_ctrlno` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `member_records`
+--
+ALTER TABLE `member_records`
+MODIFY `mr_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=201500004;
+--
+-- AUTO_INCREMENT for table `member_status`
+--
+ALTER TABLE `member_status`
+MODIFY `ms_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- Constraints for dumped tables
 --
 
@@ -186,25 +206,6 @@ MODIFY `el_ctrlno` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `barangay_personnel`
 ADD CONSTRAINT `fk_barangay_personnel_member_records1` FOREIGN KEY (`member_records_mr_id`) REFERENCES `mydb`.`member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `event_list`
---
-ALTER TABLE `event_list`
-ADD CONSTRAINT `fk_event_list_event1` FOREIGN KEY (`ev_id`) REFERENCES `mydb`.`event` (`ev_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_event_list_member_records1` FOREIGN KEY (`mr_id`) REFERENCES `mydb`.`member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `member_status`
---
-ALTER TABLE `member_status`
-ADD CONSTRAINT `fk_member_status_member_records` FOREIGN KEY (`member_records_mr_id`) REFERENCES `mydb`.`member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `renew_list`
---
-ALTER TABLE `renew_list`
-ADD CONSTRAINT `fk_renew_list_member_records1` FOREIGN KEY (`member_records_mr_id`) REFERENCES `mydb`.`member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
