@@ -46,12 +46,12 @@ class EventList extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'el_ctrlno' => 'El Ctrlno',
-            'el_date' => 'Date of Event',
-            'el_event' => 'Event Name',
-            'el_venue' => 'Event Venue',
-            'mr_id' => 'Mr ID',
-            'ev_id' => 'Ev ID',
+            'el_ctrlno' => 'EVENT LIST NO.',
+            'el_date' => 'EVENT  DATE',
+            'el_event' => 'EVENT NAME',
+            'el_venue' => 'EVENT VENUE',
+            'mr_id' => 'MEMBER ID',
+            'ev_id' => 'EVENT ID',
         ];
     }
 

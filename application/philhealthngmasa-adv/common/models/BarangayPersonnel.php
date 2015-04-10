@@ -38,8 +38,8 @@ class BarangayPersonnel extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'per_datehired' => 'Date Hired',
-            'member_records_mr_id' => 'Member ID',
+            'per_datehired' => 'DATE HIRED',
+            'member_records_mr_id' => 'MEMBER ID',
         ];
     }
 }

@@ -43,10 +43,10 @@ class MemberStatus extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'ms_id' => 'Ms ID',
-            'ms_description' => 'Ms Description',
-            'ms_date' => 'Ms Date',
-            'member_records_mr_id' => 'Member Records Mr ID',
+            'ms_id' => 'STATUS ID',
+            'ms_description' => 'STATUS DESCRIPTION',
+            'ms_date' => 'STATUS DATE',
+            'member_records_mr_id' => 'MEMBER ID',
         ];
     }
 
