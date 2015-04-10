@@ -62,6 +62,7 @@ class MemberRecords extends \yii\db\ActiveRecord
     {
         return [
             'mr_id' => 'ID',
+<<<<<<< HEAD
             'mr_lname' => 'LAST NAME',
             'mr_fname' => 'FIRST NAME',
             'mr_mname' => 'MIDDLE NAME',
@@ -83,6 +84,29 @@ class MemberRecords extends \yii\db\ActiveRecord
             'mr_alter_emal_ad' => 'ALTERNATE EMAIL ADDRESS',
             'mr_reg_date' => 'REGISTRATION DATE',
             'mr_exp_date' => 'EXPIRATION DATE',
+=======
+            'mr_lname' => '*Last Name',
+            'mr_fname' => '*First Name',
+            'mr_mname' => '*Middle Name',
+            'mr_bdate' => '*Birthdate',
+            'mr_civ_stat' => '*Civil Status',
+            'mr_gender' => '*Gender',
+            'mr_dependent' => '*Dependent',
+            'mr_type' => '*Type',
+            'mr_house_no' => '*House No.',
+            'mr_street' => '*Street',
+            'mr_brarangay' => '*Barangay',
+            'mr_city' => '*City',
+            'mr_zipcode' => '*Zipcode',
+            'mr_status' => '*Status',
+            'mr_mobile' => '*Mobile',
+            'mr_tel_no' => 'Telephone No',
+            'mr_office_no' => 'Office No',
+            'mr_email_ad' => 'Email Address',
+            'mr_alter_emal_ad' => 'Alternaye Email Address',
+            'mr_reg_date' => 'Register Date',
+            'mr_exp_date' => 'Expiry Date',
+>>>>>>> 8ddd8617288661054717d0cdbbd118cbff2e24dc
         ];
     }
 
