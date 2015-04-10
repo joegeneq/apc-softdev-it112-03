@@ -8,6 +8,7 @@ use common\models\RenewListSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * RenewListController implements the CRUD actions for RenewList model.
@@ -17,6 +18,16 @@ class RenewListController extends Controller
     public function behaviors()
     {
         return [
+            'acces'=>[
+                'class'=>AccessControl::classname(),
+                'only'=>['create','update', 'delete'],
+                'rules'=>[
+                    [
+                        'allow'=>true,
+                        'roles'=>['@']
+                    ],
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
