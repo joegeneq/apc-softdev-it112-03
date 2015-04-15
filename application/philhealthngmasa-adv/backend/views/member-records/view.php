@@ -35,7 +35,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' => 'mr_bdate', 'label' => 'BIRTH DATE'],
             ['attribute' => 'mr_civ_stat', 'label' => 'CIVIL STATUS'],
             ['attribute' => 'mr_gender', 'label' => 'GENDER'],
-            ['attribute' => 'mr_dependent', 'label' => 'DEPENDENT'],
             ['attribute' => 'mr_type', 'label' => 'TYPE'],
             ['attribute' => 'mr_house_no', 'label' => 'HOUSE #'],
             ['attribute' => 'mr_street', 'label' => 'STREET'],

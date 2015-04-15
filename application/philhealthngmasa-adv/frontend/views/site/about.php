@@ -15,9 +15,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="wrap">
         <div class="top-nav">
             <ul>
-						<li><a href="index.html">HOME</a></li>
+						<li><a href="index.php">HOME</a></li>
                 		<li class="active"><a href="./index.php?r=site%2Fabout">ABOUT US</a></li>
-                		<li><a href="searchmember.html">SEARCH MEMBER</a></li>
+                		<li><a href="searchmember.php">SEARCH MEMBER</a></li>
                 		<li><a href="./index.php?r=site%2Fabout">EVENTS</a></li>
                 		<li><a href="./index.php?r=site%2Fcontact">CONTACT</a></li>
             </ul>

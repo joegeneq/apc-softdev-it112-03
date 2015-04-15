@@ -19,7 +19,7 @@ class MemberRecordsSearch extends MemberRecords
     {
         return [
             [['mr_id'], 'integer'],
-            [['mr_lname', 'mr_fname', 'mr_mname', 'mr_bdate', 'mr_civ_stat', 'mr_gender', 'mr_dependent', 'mr_type', 'mr_house_no', 'mr_street', 'mr_brarangay', 'mr_city', 'mr_zipcode', 'mr_status', 'mr_mobile', 'mr_tel_no', 'mr_office_no', 'mr_email_ad', 'mr_alter_emal_ad', 'mr_reg_date', 'mr_exp_date'], 'safe'],
+            [['mr_lname', 'mr_fname', 'mr_mname', 'mr_bdate', 'mr_civ_stat', 'mr_gender', 'mr_type', 'mr_house_no', 'mr_street', 'mr_brarangay', 'mr_city', 'mr_zipcode', 'mr_status', 'mr_mobile', 'mr_tel_no', 'mr_office_no', 'mr_email_ad', 'mr_alter_emal_ad', 'mr_reg_date', 'mr_exp_date'], 'safe'],
         ];
     }
 
@@ -67,13 +67,13 @@ class MemberRecordsSearch extends MemberRecords
             ->andFilterWhere(['like', 'mr_mname', $this->mr_mname])
             ->andFilterWhere(['like', 'mr_civ_stat', $this->mr_civ_stat])
             ->andFilterWhere(['like', 'mr_gender', $this->mr_gender])
-            ->andFilterWhere(['like', 'mr_dependent', $this->mr_dependent])
             ->andFilterWhere(['like', 'mr_type', $this->mr_type])
             ->andFilterWhere(['like', 'mr_house_no', $this->mr_house_no])
             ->andFilterWhere(['like', 'mr_street', $this->mr_street])
             ->andFilterWhere(['like', 'mr_brarangay', $this->mr_brarangay])
             ->andFilterWhere(['like', 'mr_city', $this->mr_city])
             ->andFilterWhere(['like', 'mr_zipcode', $this->mr_zipcode])
+            ->andFilterWhere(['like', 'mr_status', $this->mr_status])
             ->andFilterWhere(['like', 'mr_status', $this->mr_status])
             ->andFilterWhere(['like', 'mr_mobile', $this->mr_mobile])
             ->andFilterWhere(['like', 'mr_tel_no', $this->mr_tel_no])

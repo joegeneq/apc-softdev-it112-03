@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\MemberRecords */
 /* @var $form yii\widgets\ActiveForm */
@@ -36,24 +37,27 @@ use dosamigos\datepicker\DatePicker;
 
     <?php echo $form->field($model, 'mr_gender') ->dropDownList(['' => '--Select--', 'Male' => 'Male', 'Female' => 'Female']); ?>
 
-    <?= $form->field($model, 'mr_dependent')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'mr_status') ->dropDownList(['' => '--Select--', 'New Applicant' => 'New Applicant', 
+        'Renewing Member' => 'Renewing Member', 'Inactive Member' => 'Inactive Member' ]);?>    
 
-    <?= $form->field($model, 'mr_type')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mr_house_no')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'mr_type') ->dropDownList(['' => '--Select--', 'employed member (private)' => 'employed member (private)',
+        'employed member (government)' => 'employed member (government)', 'employed member (household help)' => 'employed member (household help)',
+        'OFW' => 'OFW', 'sponsored member' => 'sponsored member', 'life time member' => 'life time member', 'selfemployed' => 'selfemployed',
+        'others' => 'others']); ?>
+
+    <?= $form->field($model, 'mr_city') ->dropDownList(['' => '--Select--', 'Makati City' => 'Makati City']);?> 
+
+    <?= $form->field($model, 'mr_brarangay') ->dropDownList(['' => '--Select--', 'Barangay Bangkal' => 'Barangay Bangkal']);?>  
 
     <?php echo $form->field($model, 'mr_street') ->dropDownList(['' => '--Select--', 'Malvar' => 'Malvar', 'Macabulos' => 'Macabulos', 'Estrella' => 'Estrella', 
         'Dallas' => 'Dallas', 'Apolinario' => 'Apolinario', 'Lacuña' => 'Lacuña', 'Garcia' => 'Garcia',
         'Hizon' => 'Hizon', 'Tinio' => 'Tinio',
-        'Mpjica' => 'Mojica', 'Del Pilar' => 'Del Pilar']); ?>
+        'Mpjica' => 'Mojica', 'Del Pilar' => 'Del Pilar']); ?>             
 
-    <?= $form->field($model, 'mr_brarangay') ->dropDownList(['' => '--Select--', 'Barangay Bangkal' => 'Barangay Bangkal']);?>
-
-    <?= $form->field($model, 'mr_city') ->dropDownList(['' => '--Select--', 'Makati City' => 'Makati City']);?>
+    <?= $form->field($model, 'mr_house_no')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'mr_zipcode') ->dropDownList(['' => '--Select--', '1233' => '1233']);?>
-
-    <?= $form->field($model, 'mr_status') ->dropDownList(['' => '--Select--', 'New Applicant' => 'New Applicant', 'Renewed' => 'Renewed', ]);?>
 
     <?= $form->field($model, 'mr_mobile')->textInput(['maxlength' => 45]) ?>
 

@@ -14,7 +14,6 @@ use Yii;
  * @property string $mr_bdate
  * @property string $mr_civ_stat
  * @property string $mr_gender
- * @property string $mr_dependent
  * @property string $mr_type
  * @property string $mr_house_no
  * @property string $mr_street
@@ -48,10 +47,10 @@ class MemberRecords extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['mr_lname', 'mr_fname', 'mr_mname', 'mr_bdate', 'mr_civ_stat', 'mr_gender', 'mr_dependent', 'mr_type', 'mr_house_no', 'mr_status', 'mr_mobile', 'mr_reg_date', 'mr_exp_date'], 'required'],
+            [['mr_lname', 'mr_fname', 'mr_mname', 'mr_bdate', 'mr_civ_stat', 'mr_gender', 'mr_type', 'mr_house_no', 'mr_status', 'mr_mobile', 'mr_reg_date', 'mr_exp_date'], 'required'],
             [['mr_id'], 'integer'],
             [['mr_bdate', 'mr_reg_date', 'mr_exp_date'], 'safe'],
-            [['mr_lname', 'mr_fname', 'mr_mname', 'mr_civ_stat', 'mr_gender', 'mr_dependent', 'mr_type', 'mr_house_no', 'mr_street', 'mr_brarangay', 'mr_city', 'mr_zipcode', 'mr_status', 'mr_mobile', 'mr_tel_no', 'mr_office_no', 'mr_email_ad', 'mr_alter_emal_ad'], 'string', 'max' => 45]
+            [['mr_lname', 'mr_fname', 'mr_mname', 'mr_civ_stat', 'mr_gender', 'mr_type', 'mr_house_no', 'mr_street', 'mr_brarangay', 'mr_city', 'mr_zipcode', 'mr_status', 'mr_mobile', 'mr_tel_no', 'mr_office_no', 'mr_email_ad', 'mr_alter_emal_ad'], 'string', 'max' => 45]
         ];
     }
 
@@ -62,21 +61,19 @@ class MemberRecords extends \yii\db\ActiveRecord
     {
         return [
             'mr_id' => 'ID',
-<<<<<<< HEAD
             'mr_lname' => 'LAST NAME',
             'mr_fname' => 'FIRST NAME',
             'mr_mname' => 'MIDDLE NAME',
             'mr_bdate' => 'BIRTH DATE',
             'mr_civ_stat' => 'CIVIL STATUS',
             'mr_gender' => 'GENDER',
-            'mr_dependent' => 'DEPENDENT',
-            'mr_type' => 'TYPE',
+            'mr_type' => 'MEMBERSHIP TYPE',
             'mr_house_no' => 'HOUSE NO.',
             'mr_street' => 'STREET',
             'mr_brarangay' => 'BARANGAY',
             'mr_city' => 'CITY',
             'mr_zipcode' => 'ZIPCODE',
-            'mr_status' => 'STATUS',
+            'mr_status' => 'MEMBERSHIP STATUS',
             'mr_mobile' => 'MOBILE NO.',
             'mr_tel_no' => 'TELEPHONE NO.',
             'mr_office_no' => 'OFFICE NO.',
@@ -84,29 +81,7 @@ class MemberRecords extends \yii\db\ActiveRecord
             'mr_alter_emal_ad' => 'ALTERNATE EMAIL ADDRESS',
             'mr_reg_date' => 'REGISTRATION DATE',
             'mr_exp_date' => 'EXPIRATION DATE',
-=======
-            'mr_lname' => '*Last Name',
-            'mr_fname' => '*First Name',
-            'mr_mname' => '*Middle Name',
-            'mr_bdate' => '*Birthdate',
-            'mr_civ_stat' => '*Civil Status',
-            'mr_gender' => '*Gender',
-            'mr_dependent' => '*Dependent',
-            'mr_type' => '*Type',
-            'mr_house_no' => '*House No.',
-            'mr_street' => '*Street',
-            'mr_brarangay' => '*Barangay',
-            'mr_city' => '*City',
-            'mr_zipcode' => '*Zipcode',
-            'mr_status' => '*Status',
-            'mr_mobile' => '*Mobile',
-            'mr_tel_no' => 'Telephone No',
-            'mr_office_no' => 'Office No',
-            'mr_email_ad' => 'Email Address',
-            'mr_alter_emal_ad' => 'Alternaye Email Address',
-            'mr_reg_date' => 'Register Date',
-            'mr_exp_date' => 'Expiry Date',
->>>>>>> 8ddd8617288661054717d0cdbbd118cbff2e24dc
+
         ];
     }
 

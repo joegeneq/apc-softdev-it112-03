@@ -42,11 +42,9 @@ AppAsset::register($this);
                     ['label' => 'Admin', 'items' => [
                         ['label' => 'Users', 'url' => ['/user/index']],
                         ['label' => 'Member Records', 'url' => ['/member-records/index']],
-                        ['label' => 'Member Status', 'url' => ['/member-status/index']],
+                        ['label' => 'Dependents', 'url' => ['/dependents/index']],
                         ['label' => 'Event', 'url' => ['/event/index']],
-                        ['label' => 'Event List', 'url' => ['/event-list/index']],
-                        ['label' => 'Renew List', 'url' => ['/renew-list/index']],
-                        ['label' => 'Barangay Personnel', 'url' => ['/barangay-personnel/index']],
+
                     ]],
                     ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                         'url' => ['/site/logout'],

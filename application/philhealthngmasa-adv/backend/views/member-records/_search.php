@@ -29,8 +29,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'mr_gender') ?>
 
-    <?php // echo $form->field($model, 'mr_dependent') ?>
-
     <?php // echo $form->field($model, 'mr_type') ?>
 
     <?php // echo $form->field($model, 'mr_house_no') ?>
