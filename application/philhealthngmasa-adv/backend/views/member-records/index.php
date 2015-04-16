@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\MemberRecordsSearch */
@@ -13,42 +13,55 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="member-records-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+ <?php
+    $gridColumns = [
+        [
+            'class' => 'kartik\grid\SerialColumn',
+            'contentOptions' => ['class' => 'kartik-sheet-style'],
+            'header' => '',
+            'headerOptions' => ['class' => 'kartik-sheet-style']
+        ],
+            ['attribute' => 'mr_id', 'label' => 'MEMBER ID'],
+            ['attribute' => 'mr_lname', 'label' => 'LAST NAME'],
+            ['attribute' => 'mr_fname', 'label' => 'FIRST NAME'],
+            ['attribute' => 'mr_status', 'label' => 'MEMBERSHIP STATUS'], 
+            ['attribute' => 'mr_reg_date', 'label' => 'REGISTRATION DATE'],             
+            ['attribute' => 'mr_exp_date', 'label' => 'EXPIRATION DATE'],
+
+        ['class' => 'kartik\grid\ActionColumn'],
+
+
+        ];
+
+/***
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Member Records', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+***/    
 
-    <?= GridView::widget([
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+        'columns' => $gridColumns,
+        'responsive' => true,
+        'hover' => true,
 
-            'mr_id',
-            'mr_lname',
-            'mr_fname',
-            //'mr_type',
-            'mr_status',
-            'mr_reg_date',
-            'mr_exp_date',
-            // 'mr_mname',
-            // 'mr_bdate',
-            // 'mr_civ_stat',
-            // 'mr_gender',
-            // 'mr_house_no',
-            // 'mr_street',
-            // 'mr_brarangay',
-            // 'mr_city',
-            // 'mr_zipcode',
-            // 'mr_mobile',
-            // 'mr_tel_no',
-            // 'mr_office_no',
-            // 'mr_email_ad:email',
-            // 'mr_alter_emal_ad',
-
-            ['class' => 'yii\grid\ActionColumn'],
+  'containerOptions' => ['style'=>'overflow: auto'], // only set when $responsive = false
+        'headerRowOptions'=>['class'=>'kartik-sheet-style'],
+        'filterRowOptions'=>['class'=>'kartik-sheet-style'],
+        'pjax' => true, 
+        'floatHeader'=>true,
+        'panel' => [
+            'heading'=>'<h3 class="panel-title"><i class="glyphicon glyphicon-list"></i>&nbsp&nbsp List of Member Records</h3>',
+            'type'=>GridView::TYPE_PRIMARY,
+            'before'=>Html::a('<i class="glyphicon glyphicon-plus"></i> Add New Member', ['create'], ['class' => 'btn btn-success']),
+            'after'=>Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset Grid', ['index'], ['class' => 'btn btn-info']),
         ],
-    ]); ?>
+
+    ]); 
+
+    ?>
 
 </div>
