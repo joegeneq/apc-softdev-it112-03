@@ -35,7 +35,7 @@ use dosamigos\datepicker\DatePicker;
 
     <?php
         $event=event::find()->all();
-        $listData=ArrayHelper::map($event,'ev_id','ev_id');
+        $listData=ArrayHelper::map($event,'ev_id','event_name');
         echo $form->field($model, 'ev_id')->dropDownList(
                                 $listData,
                                ['prompt'=>'--Select--']);

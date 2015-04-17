@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2015 at 10:17 PM
+-- Generation Time: Apr 17, 2015 at 03:54 PM
 -- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -76,23 +76,10 @@ CREATE TABLE IF NOT EXISTS `email` (
 
 CREATE TABLE IF NOT EXISTS `event` (
 `ev_id` int(11) NOT NULL,
-  `ev_name` varchar(45) DEFAULT NULL,
-  `ev_description` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `event_list`
---
-
-CREATE TABLE IF NOT EXISTS `event_list` (
-`el_ctrlno` int(11) NOT NULL,
-  `el_date` date DEFAULT NULL,
-  `el_event` varchar(45) DEFAULT NULL,
-  `el_venue` varchar(45) DEFAULT NULL,
-  `member_records_mr_id` int(11) NOT NULL,
-  `event_ev_id` int(11) NOT NULL
+  `ev_title` varchar(45) NOT NULL,
+  `ev_date` date NOT NULL,
+  `ev_location` varchar(45) NOT NULL,
+  `ev_desc` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -136,6 +123,25 @@ INSERT INTO `member_records` (`mr_id`, `mr_lname`, `mr_fname`, `mr_mname`, `mr_b
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `migration`
+--
+
+CREATE TABLE IF NOT EXISTS `migration` (
+  `version` varchar(180) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `migration`
+--
+
+INSERT INTO `migration` (`version`, `apply_time`) VALUES
+('m000000_000000_base', 1425689251),
+('m130524_201442_init', 1425689253);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `renew_list`
 --
 
@@ -144,6 +150,24 @@ CREATE TABLE IF NOT EXISTS `renew_list` (
   `rl_date_created` date NOT NULL,
   `member_records_mr_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+`id` int(11) NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` smallint(6) NOT NULL DEFAULT '10',
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -174,22 +198,28 @@ ALTER TABLE `event`
  ADD PRIMARY KEY (`ev_id`);
 
 --
--- Indexes for table `event_list`
---
-ALTER TABLE `event_list`
- ADD PRIMARY KEY (`el_ctrlno`,`member_records_mr_id`,`event_ev_id`), ADD KEY `fk_event_list_member_records1_idx` (`member_records_mr_id`), ADD KEY `fk_event_list_event1_idx` (`event_ev_id`);
-
---
 -- Indexes for table `member_records`
 --
 ALTER TABLE `member_records`
  ADD PRIMARY KEY (`mr_id`);
 
 --
+-- Indexes for table `migration`
+--
+ALTER TABLE `migration`
+ ADD PRIMARY KEY (`version`);
+
+--
 -- Indexes for table `renew_list`
 --
 ALTER TABLE `renew_list`
  ADD PRIMARY KEY (`rl_control_no`), ADD KEY `fk_renew_list_member_records1_idx` (`member_records_mr_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -206,11 +236,6 @@ MODIFY `id` int(45) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 ALTER TABLE `event`
 MODIFY `ev_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `event_list`
---
-ALTER TABLE `event_list`
-MODIFY `el_ctrlno` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `member_records`
 --
 ALTER TABLE `member_records`
@@ -220,6 +245,11 @@ MODIFY `mr_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=201500003;
 --
 ALTER TABLE `renew_list`
 MODIFY `rl_control_no` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -235,13 +265,6 @@ ADD CONSTRAINT `fk_barangay_personnel_member_records1` FOREIGN KEY (`member_reco
 --
 ALTER TABLE `dependents`
 ADD CONSTRAINT `fk_dependents_member_records` FOREIGN KEY (`member_records_mr_id`) REFERENCES `member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `event_list`
---
-ALTER TABLE `event_list`
-ADD CONSTRAINT `fk_event_list_event1` FOREIGN KEY (`event_ev_id`) REFERENCES `mydb`.`event` (`ev_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_event_list_member_records1` FOREIGN KEY (`member_records_mr_id`) REFERENCES `mydb`.`member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `renew_list`
