@@ -40,8 +40,9 @@ $this->title = 'Brgy. Bangkal Philhealth ng Masa';
 			    <div class="content_top">
 			    	<div class="wrap">
 						<h1><a href="#">WELCOME</a></h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
-						<span><a class="learnmore" href="#">LEARN MORE</a></span>
+						<p>In the 1990s, a vision for a better, more responsive government health care program was prompted by the passage of several bills that had significant implications on health financing. The public's clamor for a health insurance that is more comprehensive in terms of covered population led to the development of House Bill 14225 which became The National Health Insurance Act of 1995 or Republic Act 7875, signed by President Fidel V. Ramos on February 14, 1995. The law paved the way for the creation of the 
+							Philippine Health Insurance Corporation (PhilHealth), mandated to provide social health insurance coverage to all Filipinos.</p>
+						<span><a class="learnmore" href="./index.php?r=site%2Fabout">LEARN MORE</a></span>
 					</div>
 			    </div>
 			<center>	
@@ -53,10 +54,10 @@ $this->title = 'Brgy. Bangkal Philhealth ng Masa';
 									  <img src="images/lists.png">
 								</div>
 							    <div class="text list_2_of_1 ">
-									<h3><span>RENEWAL LISTS</span></h3>
+									<h3><span>SEARCH MEMBER</span></h3>
 									<h4>Sed ut perspiciatis undeaccusantium .</h4>
 									   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
-									 <a class="button" href="#">Learn More</a>
+									 <a class="button" href="./index.php?r=member-records">Learn More</a>
 							   </div>
 						   </div>			
 							<div class="listview_1_of_2 images_1_of_2">
@@ -67,7 +68,7 @@ $this->title = 'Brgy. Bangkal Philhealth ng Masa';
 									  <h3><span>ABOUT US</span></h3>
 									  <h4>Sed ut perspiciatis undeaccusantium .</h4>
 									    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
-									  <a class="button" href="#">Learn More</a>
+									  <a class="button" href="./index.php?r=site%2Fabout">Learn More</a>
 								</div>
 							</div>
 						</div>
@@ -80,7 +81,7 @@ $this->title = 'Brgy. Bangkal Philhealth ng Masa';
 									<h3><span>EVENTS</span></h3>
 									<h4>Sed ut perspiciatis undeaccusantium .</h4>
 									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </p>
-									 <a class="button" href="#">Learn More</a>
+									 <a class="button" href="./index.php?r=events">Learn More</a>
 							   </div>
 						   </div>			
 							<div class="listview_1_of_2 images_1_of_2">
