@@ -4,9 +4,16 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '6gS10leXUrOGtGrg34dizfS17rG5WFHt',
+            'cookieValidationKey' => 'pBfkOx72LpHmd3YX0Rui8ybBMG2vYydp',
         ],
     ],
+
+    'modules' => [
+        'gridview' =>  [
+        'class' => '\kartik\grid\Module'
+            ]
+        ],
+    
 ];
 
 if (!YII_ENV_TEST) {

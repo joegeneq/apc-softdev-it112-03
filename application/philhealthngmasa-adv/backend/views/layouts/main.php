@@ -40,7 +40,6 @@ AppAsset::register($this);
                 $menuItems = [
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'Admin', 'items' => [
-                        ['label' => 'Users', 'url' => ['/user/index']],
                         ['label' => 'Member Records', 'url' => ['/member-records/index']],
                         ['label' => 'Dependents', 'url' => ['/dependents/index']],
                         ['label' => 'Event', 'url' => ['/event/index']],
@@ -68,7 +67,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Asia Pacific College | IT-112 <?= date('Y') ?></p>
         <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
