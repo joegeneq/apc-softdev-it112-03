@@ -8,12 +8,12 @@ use Yii;
  * This is the model class for table "event".
  *
  * @property integer $ev_id
- * @property string $ev_name
- * @property string $ev_description
- *
- * @property EventList[] $eventLists
+ * @property string $ev_title
+ * @property string $ev_date
+ * @property string $ev_location
+ * @property string $ev_desc
  */
-class Event extends \yii\db\ActiveRecord
+class event extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -29,9 +29,10 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ev_id'], 'required'],
-            [['ev_id'], 'integer'],
-            [['ev_name', 'ev_description'], 'string', 'max' => 45]
+            [['ev_title', 'ev_date', 'ev_location', 'ev_desc'], 'required'],
+            [['ev_date'], 'safe'],
+            [['ev_title', 'ev_location'], 'string', 'max' => 45],
+            [['ev_desc'], 'string', 'max' => 250]
         ];
     }
 
@@ -41,17 +42,11 @@ class Event extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'ev_id' => 'EVENT ID',
-            'ev_name' => 'EVENT NAME',
-            'ev_description' => 'EVENT DESCRIPTION',
+            'ev_id' => 'Ev ID',
+            'ev_title' => 'Ev Title',
+            'ev_date' => 'Ev Date',
+            'ev_location' => 'Ev Location',
+            'ev_desc' => 'Ev Desc',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEventLists()
-    {
-        return $this->hasMany(EventList::className(), ['ev_id' => 'ev_id']);
     }
 }

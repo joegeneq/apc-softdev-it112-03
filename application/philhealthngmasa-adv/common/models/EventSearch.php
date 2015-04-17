@@ -19,7 +19,7 @@ class EventSearch extends Event
     {
         return [
             [['ev_id'], 'integer'],
-            [['ev_name', 'ev_description'], 'safe'],
+            [['ev_title', 'ev_date', 'ev_location', 'ev_desc'], 'safe'],
         ];
     }
 
@@ -57,10 +57,12 @@ class EventSearch extends Event
 
         $query->andFilterWhere([
             'ev_id' => $this->ev_id,
+            'ev_date' => $this->ev_date,
         ]);
 
-        $query->andFilterWhere(['like', 'ev_name', $this->ev_name])
-            ->andFilterWhere(['like', 'ev_description', $this->ev_description]);
+        $query->andFilterWhere(['like', 'ev_title', $this->ev_title])
+            ->andFilterWhere(['like', 'ev_location', $this->ev_location])
+            ->andFilterWhere(['like', 'ev_desc', $this->ev_desc]);
 
         return $dataProvider;
     }
