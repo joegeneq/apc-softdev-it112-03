@@ -29,7 +29,6 @@ use Yii;
  * @property string $mr_reg_date
  * @property string $mr_exp_date
  *
- * @property MemberStatus[] $memberStatuses
  */
 class MemberRecords extends \yii\db\ActiveRecord
 {
@@ -88,8 +87,8 @@ class MemberRecords extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMemberStatus()
+    public function getDependents()
     {
-        return $this->hasMany(MemberStatus::className(), ['member_records_mr_id' => 'mr_id']);
+        return $this->hasMany(Dependents::className(), ['member_records_mr_id' => 'mr_id']);
     }
 }

@@ -12,7 +12,7 @@ use Yii;
  * @property string $relationship
  * @property integer $member_records_mr_id
  *
- * @property MemberRecords $memberRecordsMr
+ * @property MemberRecords $member_records
  */
 class Dependents extends \yii\db\ActiveRecord
 {
@@ -52,7 +52,7 @@ class Dependents extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMemberRecordsMr()
+    public function getMemberRecordsMr  ()
     {
         return $this->hasOne(MemberRecords::className(), ['mr_id' => 'member_records_mr_id']);
     }
