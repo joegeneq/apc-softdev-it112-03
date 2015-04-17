@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Event */
@@ -14,7 +15,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ev_title')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'ev_date')->textInput() ?>
+    <?= $form->field($model, 'ev_date')->widget(
+         DatePicker::className(), [
+        // inline too, not bad
+         'inline' => true, 
+         // modify template for custom rendering
+        'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);?>
 
     <?= $form->field($model, 'ev_location')->textInput(['maxlength' => 45]) ?>
 
