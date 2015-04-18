@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <li><a href="index.php">HOME</a></li>
                         <li><a href="./index.php?r=site%2Fabout">ABOUT US</a></li>
                         <li class="active"><a href="./index.php?r=member-records">SEARCH MEMBER</a></li>
-                        <li><a href="./index.php?r=site%2Fabout">EVENTS</a></li>
+                        <li><a href="./index.php?r=event">EVENTS</a></li>
                         <li><a href="./index.php?r=site%2Fcontact">CONTACT</a></li>
             </ul>
         </div>
