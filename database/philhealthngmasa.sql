@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2015 at 03:54 PM
+-- Generation Time: Apr 20, 2015 at 01:20 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,17 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `philhealthngmasa`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `barangay_personnel`
---
-
-CREATE TABLE IF NOT EXISTS `barangay_personnel` (
-  `per_datehired` date NOT NULL,
-  `member_records_mr_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -57,20 +46,6 @@ INSERT INTO `dependents` (`id`, `name`, `relationship`, `member_records_mr_id`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `email`
---
-
-CREATE TABLE IF NOT EXISTS `email` (
-  `id` int(11) NOT NULL,
-  `receiver_name` varchar(50) NOT NULL,
-  `receiver_email` varchar(200) NOT NULL,
-  `subject` varchar(255) NOT NULL,
-  `content` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `event`
 --
 
@@ -79,8 +54,17 @@ CREATE TABLE IF NOT EXISTS `event` (
   `ev_title` varchar(45) NOT NULL,
   `ev_date` date NOT NULL,
   `ev_location` varchar(45) NOT NULL,
-  `ev_desc` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `ev_desc` varchar(250) NOT NULL,
+  `ev_content` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`ev_id`, `ev_title`, `ev_date`, `ev_location`, `ev_desc`, `ev_content`) VALUES
+(1, 'Renewal of PhilHealth Cards', '2015-02-19', 'Makati City Hall', 'Renewal of PhilHealth Cards for the first quarter of 2015.', ''),
+(2, 'Renewal of PhilHealth Cards', '2015-05-22', 'Makati City Hall', 'Renewal of PhilHealth Cards for the second quarter of 2015.', '');
 
 -- --------------------------------------------------------
 
@@ -117,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `member_records` (
 --
 
 INSERT INTO `member_records` (`mr_id`, `mr_lname`, `mr_fname`, `mr_mname`, `mr_bdate`, `mr_civ_stat`, `mr_gender`, `mr_status`, `mr_type`, `mr_house_no`, `mr_street`, `mr_brarangay`, `mr_city`, `mr_zipcode`, `mr_mobile`, `mr_tel_no`, `mr_office_no`, `mr_email_ad`, `mr_alter_emal_ad`, `mr_reg_date`, `mr_exp_date`) VALUES
-(201500001, 'Atok', 'Mariz', 'Bautista', '1995-06-20', 'Single', 'Female', 'New Applicant', 'employed member (private)', '346', 'Estrella', 'Barangay Bangkal', 'Makati City', '1233', '09123456789', '', '', '', '', '2014-09-30', '2015-10-01'),
+(201500001, 'Atok', 'Mariz', 'Bautista', '1995-06-20', 'Single', 'Female', 'Renewing Member', 'employed member (private)', '346', 'Estrella', 'Barangay Bangkal', 'Makati City', '1233', '09123456789', '', '', '', '', '2014-09-30', '2015-10-01'),
 (201500002, 'Alegre', 'Ricardo', 'Globio', '1967-07-11', 'Married', 'Male', 'Renewing Member', 'employed member (private)', '234', 'Lacuña', 'Barangay Bangkal', 'Makati City', '1233', '09123456789', '', '7760506', 'ricardoa@gmail.com', '', '2015-10-01', '2016-09-30');
 
 -- --------------------------------------------------------
@@ -142,18 +126,6 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `renew_list`
---
-
-CREATE TABLE IF NOT EXISTS `renew_list` (
-`rl_control_no` int(11) NOT NULL,
-  `rl_date_created` date NOT NULL,
-  `member_records_mr_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -174,22 +146,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 --
--- Indexes for table `barangay_personnel`
---
-ALTER TABLE `barangay_personnel`
- ADD PRIMARY KEY (`member_records_mr_id`);
-
---
 -- Indexes for table `dependents`
 --
 ALTER TABLE `dependents`
  ADD PRIMARY KEY (`id`,`member_records_mr_id`), ADD KEY `fk_dependents_member_records1_idx` (`member_records_mr_id`);
-
---
--- Indexes for table `email`
---
-ALTER TABLE `email`
- ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `event`
@@ -210,12 +170,6 @@ ALTER TABLE `migration`
  ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `renew_list`
---
-ALTER TABLE `renew_list`
- ADD PRIMARY KEY (`rl_control_no`), ADD KEY `fk_renew_list_member_records1_idx` (`member_records_mr_id`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -234,17 +188,12 @@ MODIFY `id` int(45) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-MODIFY `ev_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ev_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `member_records`
 --
 ALTER TABLE `member_records`
 MODIFY `mr_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=201500003;
---
--- AUTO_INCREMENT for table `renew_list`
---
-ALTER TABLE `renew_list`
-MODIFY `rl_control_no` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -255,22 +204,10 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 
 --
--- Constraints for table `barangay_personnel`
---
-ALTER TABLE `barangay_personnel`
-ADD CONSTRAINT `fk_barangay_personnel_member_records1` FOREIGN KEY (`member_records_mr_id`) REFERENCES `mydb`.`member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Constraints for table `dependents`
 --
 ALTER TABLE `dependents`
 ADD CONSTRAINT `fk_dependents_member_records` FOREIGN KEY (`member_records_mr_id`) REFERENCES `member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `renew_list`
---
-ALTER TABLE `renew_list`
-ADD CONSTRAINT `fk_renew_list_member_records1` FOREIGN KEY (`member_records_mr_id`) REFERENCES `mydb`.`member_records` (`mr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

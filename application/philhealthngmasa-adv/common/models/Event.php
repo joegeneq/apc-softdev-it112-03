@@ -12,8 +12,9 @@ use Yii;
  * @property string $ev_date
  * @property string $ev_location
  * @property string $ev_desc
+ * @property string $ev_content
  */
-class event extends \yii\db\ActiveRecord
+class Event extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -29,8 +30,9 @@ class event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ev_title', 'ev_date', 'ev_location', 'ev_desc'], 'required'],
+            [['ev_title', 'ev_date', 'ev_location', 'ev_desc', 'ev_content'], 'required'],
             [['ev_date'], 'safe'],
+            [['ev_content'], 'string'],
             [['ev_title', 'ev_location'], 'string', 'max' => 45],
             [['ev_desc'], 'string', 'max' => 250]
         ];
@@ -47,6 +49,7 @@ class event extends \yii\db\ActiveRecord
             'ev_date' => 'EVENT DATE',
             'ev_location' => 'EVENT LOCATION',
             'ev_desc' => 'EVENT DESCRIPTION',
+            'ev_content' => 'EVENT CONTENT',
         ];
     }
 }

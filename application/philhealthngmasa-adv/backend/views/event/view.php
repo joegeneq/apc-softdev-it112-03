@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'ev_date',
             'ev_location',
             'ev_desc',
+            'ev_content:ntext',
         ],
     ]) ?>
 
