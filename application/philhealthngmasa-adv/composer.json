@@ -15,17 +15,20 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "kartik-v/yii2-grid": "@dev",
-        "kartik-v/yii2-krajee-base": "@dev",
-        "kartik-v/yii2-mpdf": "*",  
-        "kartik-v/yii2-editable": "@dev",
-        "kartik-v/yii2-widgets": "@dev",
-
-        "kartik-v/yii2-grid": "*",
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "2amigos/yii2-date-picker-widget": "~1.0"
+        "2amigos/yii2-date-picker-widget": "~1.0",
+        "kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-krajee-base": "@dev",
+        "kartik-v/yii2-mpdf": "@dev",   
+        "kartik-v/yii2-editable": "@dev",
+        "kartik-v/yii2-widget-colorinput": "@dev",
+        "kartik-v/yii2-widgets": "@dev",
+        "yiisoft/yii2-jui": "@dev",
+        "fortawesome/font-awesome": "@dev",
+        "kartik-v/yii2-icons": "@dev",
+        "kartik-v/yii2-detail-view": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

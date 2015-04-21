@@ -12,7 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="dependents-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id, 'member_records_mr_id' => $model->member_records_mr_id], ['class' => 'btn btn-primary']) ?>

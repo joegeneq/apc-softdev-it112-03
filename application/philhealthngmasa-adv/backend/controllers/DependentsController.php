@@ -14,6 +14,8 @@ use yii\filters\VerbFilter;
  */
 class DependentsController extends Controller
 {
+     public $layout = 'main2';
+
     public function behaviors()
     {
         return [
@@ -64,7 +66,7 @@ class DependentsController extends Controller
         $model = new Dependents();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'member_records_mr_id' => $model->member_records_mr_id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,

@@ -1,7 +1,23 @@
+<script type="text/javascript">
+<!--//
+function sizeFrame(frameId) {
+var F = document.getElementById(frameId);
+if(F.contentDocument) {
+F.height = F.contentDocument.documentElement.scrollHeight+30; //FF 3.0.11, Opera 9.63, and Chrome
+} else {
+F.height = F.contentWindow.document.body.scrollHeight+30; //IE6, IE7 and Chrome
+}
+}
+// window.onload=sizeFrame; 
+//-->
+</script>
+
+
+
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+use kartik\detail\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\MemberRecords */
@@ -25,10 +41,17 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            ['attribute' => 'mr_id', 'label' => 'ID'],
+<?php
+
+    $attributes = [
+        [
+        'group'=>true,
+        'label'=>'SECTION 1: Member Records',
+        'rowOptions'=>['class'=>'info'],
+        //'groupOptions'=>['class'=>'text-center']
+        ],
+
+        'mr_id',    
             ['attribute' => 'mr_lname', 'label' => 'LAST NAME'],
             ['attribute' => 'mr_fname', 'label' => 'FIRST NAME'],
             ['attribute' => 'mr_mname', 'label' => 'MIDDLE NAME'],
@@ -49,7 +72,36 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' => 'mr_alter_emal_ad', 'label' => 'ALTER EMAIL'],
             ['attribute' => 'mr_reg_date', 'label' => 'REGISTER DATE'],
             ['attribute' => 'mr_exp_date', 'label' => 'EXPIRY DATE'],
-        ],
-    ]) ?>
 
-</div>
+        [
+            'group'=>true,
+            'label'=>'SECTION 2: Dependents',
+            'rowOptions'=>['class'=>'info'],
+            //'groupOptions'=>['class'=>'text-center']
+        ],
+    ]
+        
+    ?>
+
+<?php
+    echo DetailView::widget([
+    'model'=>$model,
+    'condensed'=>true,
+    'hover'=>true,
+    'mode'=>DetailView::MODE_VIEW,
+    'panel'=>false,
+    'attributes'=> $attributes,
+]);
+/*
+    echo ListView::widget( [
+        'dataProvider' => $dataProvider,
+        'itemView' => '_requirements_items',
+    ] );*/
+?>
+
+<iframe width="100%" id="myFrame" 
+src="index.php?DependentsSearch%5Bmember_records_mr_id%5D=<?= $model->mr_id?>&r=dependents%2Findex"
+    scrolling="no" frameborder="0" onload="sizeFrame('myFrame')">
+</iframe>
+
+</div>    
